@@ -79,3 +79,4 @@ jobs:
           path: helm
           enable_public_cosign_sigstore: 'true'
           rearm_component_id: 4bcb7d0f-37ce-4a47-98aa-6a609e162338
+          enable_sbom: 'true'

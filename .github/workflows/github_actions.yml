@@ -23,17 +23,18 @@ jobs:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
           registry_host: registry.relizahub.com
-          image_namespace: registry.relizahub.com/291f1cbe-e608-4ffd-8e1e-9a7f78e3df18-public
+          image_namespace: registry.relizahub.com/bb0ee9d8-e48a-4f53-aaa8-23ba545cba1a-public
           image_name: rebom-backend
-          rearm_api_id: ${{ secrets.REARM_BACKEND_API_ID }}
-          rearm_api_key: ${{ secrets.REARM_BACKEND_API_KEY }}
-          rearm_api_url: https://sector.rearmhq.com
+          rearm_api_id: ${{ secrets.REARM_API_ID }}
+          rearm_api_key: ${{ secrets.REARM_API_KEY }}
+          rearm_api_url: https://dev.rearmhq.com
           path: backend
           enable_sbom: 'true'
           source_code_sbom_type: 'npm'
           enable_public_cosign_sigstore: 'true'
           enable_codeql: 'true'
           codeql_language: 'javascript'
+          rearm_component_id: 65b4b0bf-fd78-4085-831e-f69248810429
   build-frontend:
     permissions:
       id-token: write
@@ -46,17 +47,18 @@ jobs:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
           registry_host: registry.relizahub.com
-          image_namespace: registry.relizahub.com/291f1cbe-e608-4ffd-8e1e-9a7f78e3df18-public
+          image_namespace: registry.relizahub.com/bb0ee9d8-e48a-4f53-aaa8-23ba545cba1a-public
           image_name: rebom-frontend
-          rearm_api_id: ${{ secrets.REARM_FRONTEND_API_ID }}
-          rearm_api_key: ${{ secrets.REARM_FRONTEND_API_KEY }}
-          rearm_api_url: https://sector.rearmhq.com
+          rearm_api_id: ${{ secrets.REARM_API_ID }}
+          rearm_api_key: ${{ secrets.REARM_API_KEY }}
+          rearm_api_url: https://dev.rearmhq.com
           path: frontend
           enable_sbom: 'true'
           source_code_sbom_type: 'npm'
           enable_public_cosign_sigstore: 'true'
           enable_codeql: 'true'
           codeql_language: 'javascript'
+          rearm_component_id: 7e140eeb-2b89-4b84-b4a1-f3530ae822c1
   build-helm:
     permissions:
       id-token: write
@@ -69,10 +71,11 @@ jobs:
         with:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
-          registry_host: registry.relizahub.com/291f1cbe-e608-4ffd-8e1e-9a7f78e3df18-public
+          registry_host: registry.relizahub.com/bb0ee9d8-e48a-4f53-aaa8-23ba545cba1a-public
           helm_chart_name: rebom
-          rearm_api_id: ${{ secrets.REARM_HELM_API_ID }}
-          rearm_api_key: ${{ secrets.REARM_HELM_API_KEY }}
-          rearm_api_url: https://sector.rearmhq.com
+          rearm_api_id: ${{ secrets.REARM_API_ID }}
+          rearm_api_key: ${{ secrets.REARM_API_KEY }}
+          rearm_api_url: https://dev.rearmhq.com
           path: helm
           enable_public_cosign_sigstore: 'true'
+          rearm_component_id: 4bcb7d0f-37ce-4a47-98aa-6a609e162338
